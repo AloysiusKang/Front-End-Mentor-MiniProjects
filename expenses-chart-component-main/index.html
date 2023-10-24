@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Expenses chart component</title>
+
+  <!-- CSS Links -->
+  <link rel="stylesheet" href="./index.css">
+  
+  <!-- JS Links -->
+  <script src="./index.js" defer></script>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <header></header>
+  
+  <main>
+    <section class="expenses">
+      <div class="balance">
+        <h2 class="balance__heading">My balance</h2>
+        <p class="balance__money">$921.48</p>
+        <img src="./images/logo.svg" alt="Logo">
+      </div>
+      <div class="spending">
+        <h1 class="spending__heading">Spending - Last 7 days</h1>
+
+        <div class="spending__wrapper--chart">
+          <div class="spending__chart"></div>
+          <div class="spending__chart"></div>
+          <div class="spending__chart"></div>
+          <div class="spending__chart"></div>
+          <div class="spending__chart"></div>
+          <div class="spending__chart"></div>
+          <div class="spending__chart"></div>
+          <p>mon</p>
+          <p>tue</p>
+          <p>wed</p>
+          <p>thu</p>
+          <p>fri</p>
+          <p>sat</p>
+          <p>sun</p>
+        </div>
+
+        <div class="line"></div>
+        
+        <div class="spending__wrapper--total">
+          <div class="grid txt-left margin-top">
+            <p>Total this month</p>
+            <p class="spending__money fs-28">$478.33</p>
+          </div>
+          <div class="grid txt-right margin-bot">
+            <p class="spending__money fs-16">+2.4%</p>
+            <p>from last month</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer></footer>
+  
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</body>
+</html>

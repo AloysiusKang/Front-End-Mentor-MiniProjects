@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Montserrat:wght@500;700&display=swap');
+
+:root{
+    /* Colours */
+    --clr-primary-400: 158, 36%, 37%;
+    --clr-primary-500: 158, 36%, 20%;
+    --clr-secondary-200: 30, 38%, 92%;
+    --clr-neutral-800: 212, 21%, 14%;
+    --clr-neutral-400: 228, 12%, 48%;
+    --clr-neutral-100: 0, 0%, 100%;
+
+    /* Font Families */
+    --ff-montserrat: 'Montserrat', sans-serif;
+    --ff-fraunces: 'Fraunces', serif;
+
+    /* Font Weight */
+    --fw-500: 500;
+    --fw-700: 700;
+}
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+
+/* 3. Allow percentage-based heights in the application */
+html, body {
+    height: 100%;
+}
+
+/* Typographic tweaks!
+4. Add accessible line-height
+5. Improve text rendering */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 7. Remove built-in form typography styles */
+input, button, textarea, select {
+    font: inherit;
+}
+  
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+body{
+    color: hsl(var(--clr-neutral-400));
+    font-size: 0.875rem;
+    font-weight: var(--fw-500);
+    font-family: var(--ff-montserrat);
+    min-height: 100vh;
+    background-color: hsl(var(--clr-secondary-200));
+}
+
+.product{
+    display: grid;
+    max-width: 650px;
+    margin: 2rem auto;
+    border-radius: .5rem;
+    background-color: hsl(var(--clr-neutral-100));
+    overflow: hidden;
+}
+
+.product__content{
+    display: grid;
+    align-items: center;
+    gap: .75rem;
+    margin: 1.5rem;
+}
+
+.product__category{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 0.8rem;
+}
+
+.product__title{
+    font-family: var(--ff-fraunces);
+    font-weight: var(--fw-700);
+    font-size: clamp(1.75rem, 5vw, 2rem);
+    line-height: 1;
+    color: hsl(var(--clr-neutral-800));
+}
+
+.product__button{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+
+    padding: .75rem 1rem;
+    border: none;
+    border-radius: .5rem;    
+    cursor: pointer;
+    
+    background-color: hsl(var(--clr-primary-400));
+    color: hsl(var(--clr-neutral-100));
+    transition: background-color 150ms ease;
+}
+.product__button:is(:hover, :focus){
+    background-color: hsl(var(--clr-primary-500));
+}
+.product__button[data-icon="shopping-cart"]::before{
+    content: "";
+    width: 15px;
+    height: 16px;
+    background-image: url(./images/icon-cart.svg);
+}
+
+
+.product__price{
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.price__current{
+    font-size: clamp(1.75rem, 5vw, 2rem);
+    font-family: var(--ff-fraunces);
+    font-weight: var(--fw-700);
+    color: hsl(var(--clr-primary-400));
+}
+
+@media(min-width: 600px){
+    .product{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+

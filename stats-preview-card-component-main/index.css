@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap');
+
+:root{
+    /* Colours */
+    --clr-primary-800: 244, 38%, 16%;
+    --clr-secondary-400: 277, 64%, 61%;
+    --clr-secondary-900: 233, 47%, 7%;
+    
+    --clr-neutral-100: 0, 0%, 100%;
+    --clr-neutral-75: 0, 0%, 100%, 0.75;
+    --clr-neutral-60: 0, 0%, 100%, 0.6;
+
+    /* Font Families */
+    --ff-inter: 'Inter', sans-serif;
+    --ff-lexend: 'Lexend Deca', sans-serif;
+
+    /* Font Weight */
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+/* 1. Use a more-intuitive box-sizing model. */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+/* 3. Allow percentage-based heights in the application */
+html, body {
+    height: 100%;
+}
+/* Typographic tweaks! 
+4. Add accessible line-height
+5. Improve text rendering */
+body {
+    line-height: 1.25;
+    -webkit-font-smoothing: antialiased;
+}
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/* 7. Remove built-in form typography styles */
+input, button, textarea, select {
+    font: inherit;
+}
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+body{
+    background-color: hsl(var(--clr-secondary-900));
+    color: hsl(var(--clr-neutral-75));
+    font-size: 0.938rem;
+    font-family: var(--ff-inter);
+    font-weight: var(--fw-regular);
+}
+
+.overlay{
+    background-color: hsl(var(--clr-secondary-400));
+}
+
+.overlay__blend{
+    mix-blend-mode: multiply;
+}
+
+.card{
+    --gap: 2rem;
+    --heading: 1.75rem;
+
+    display: grid;
+    max-width: 350px;
+    background-color: hsl(var(--clr-primary-800));
+    margin: 5rem auto;
+    border-radius: .5rem;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card__content{
+    display: grid;
+    gap: var(--gap);
+    padding: 2rem;
+}
+
+.tripple{
+    display: grid;
+    gap: var(--gap);
+}
+
+.column{
+    display: grid;
+    gap: .25rem;
+}
+
+@media(min-width: 800px){
+    .card{
+        grid-template-columns: 1fr 1fr;
+        max-width: 1000px;
+    }
+
+    .card__content{
+        grid-row: 1;
+    }
+
+    .tripple{
+        grid-auto-flow: column;
+    }
+}
+
+.card__title{
+    color: hsl(var(--clr-neutral-100));
+    font-size: var(--heading);
+    font-weight: var(--fw-bold);
+}
+.card__title > span{
+    color: hsl(var(--clr-secondary-400));
+}
+
+.card__number{
+    color: hsl(var(--clr-neutral-100));
+    font-family: var(--ff-inter);
+    font-size: var(--heading);
+    font-weight: var(--fw-bold);
+}
+
+.card__stat{
+    color: hsl(var(--clr-neutral-60));
+    font-family: var(--ff-lexend);
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}

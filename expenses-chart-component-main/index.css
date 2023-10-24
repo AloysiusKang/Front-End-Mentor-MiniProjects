@@ -1,0 +1,168 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+/* Properties */
+:root{
+    /* Font Family */
+    --ff-dm-sans: 'DM Sans', sans-serif;
+
+    /* Colours */
+    /* Primary */
+    --clr-primary-red-400: 10, 79%, 65%;
+    --clr-primary-cyan-500: 186, 34%, 60%;
+
+    /* Neutral */
+    --clr-neutral-cream-200: 27, 66%, 92%;
+    --clr-neutral-brown-800: 25, 47%, 15%;
+    --clr-neutral-brown-500: 28, 10%, 53%;
+    --clr-neutral-orange-100: 33, 100%, 98%;
+    --clr-neutral-orange-75: 33, 100%, 98%, .75;
+
+    /* Font Weight */
+    --fw-regular: 400;
+    --fw-bold: 700;
+}
+
+/* 1. Use a more-intuitive box-sizing model. */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+    margin: 0;
+}
+/* 3. Allow percentage-based heights in the application */
+html, body {
+    height: 100%;
+}
+/* Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering */
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+/* 7. Remove built-in form typography styles */
+input, button, textarea, select {
+    font: inherit;
+}
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+/* 9. Create a root stacking context */
+#root, #__next {
+    isolation: isolate;
+}
+
+body{
+    font-size: 1.125rem;
+    font-weight: var(--fw-regular);
+    font-family: 'DM Sans', sans-serif;
+    background-color: hsl(var(--clr-neutral-cream-200));
+    color: hsl(var(--clr-neutral-brown-500));
+}
+
+/* Utility Class */
+.line{
+    width: 100%;
+    height: 3px;
+    background-color: hsl(var(--clr-neutral-cream-200));
+}
+
+.grid{display: grid; grid-auto-rows: max-content;}
+
+.fs-16{font-size: 1rem;}
+.fs-28{font-size: 1.75rem;}
+
+.txt-left{text-align: left;}
+.txt-right{text-align: right;}
+
+.margin-top{margin-bottom: auto;}
+.margin-bot{margin-top: auto;}
+
+/* Expenses Section */
+.expenses{
+    --padding: 1.5rem;
+    margin: 5rem 1rem;
+    display: grid;
+    gap: 1rem;
+    max-width: 500px;
+}
+.expenses > *{
+    border-radius: 1rem;
+}
+
+.balance{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: hsl(var(--clr-primary-red-400));
+    color: hsl(var(--clr-neutral-orange-100));
+    padding: var(--padding);
+}
+.balance__heading{
+    font-size: 1.125rem;
+    color: hsl(var(--clr-neutral-orange-75));
+    font-weight: var(--fw-regular);
+}
+.balance__money{
+    font-size: 1.5rem;
+    font-weight: var(--fw-bold);
+}
+.balance > img{
+    grid-row: 1 / span 2;
+    grid-column: 2;
+    place-self: center end;
+}
+
+.spending{
+    background-color: hsl(var(--clr-neutral-orange-100));
+    padding: var(--padding);
+    display: grid;
+    gap: 1rem;
+}
+.spending__heading{
+    color: hsl(var(--clr-neutral-brown-800));
+    font-weight: var(--fw-bold);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.spending__wrapper--chart{
+    display: grid;
+    text-align: center;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+}
+.spending__wrapper--chart > p{
+    font-size: 0.875rem;
+}
+.spending__chart{
+    align-self: end;
+    border-radius: .25rem;
+    width: 100%;
+    height: calc(15rem * calc(100/100));
+    background-color: hsl(var(--clr-primary-red-400));
+}
+
+.spending__chart--high{
+    background-color: hsl(var(--clr-primary-cyan-500));
+}
+
+.spending__wrapper--total{
+    display: flex;
+    justify-content: space-between;
+}
+.spending__money{
+    color: hsl(var(--clr-neutral-brown-800));
+    font-weight: var(--fw-bold);
+}
+
+@media(min-width:600px){
+    .expenses{margin-inline: auto;}
+}
